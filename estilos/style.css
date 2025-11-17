@@ -29,13 +29,16 @@ body{
   color: var(--texto);
 }
 
-header{
+header{ 
+  position: sticky;
+  top: 0px;
   background-color: var(--destaque);
   color: var(--texto);
   padding: 10px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  z-index: 1;
 }
 
 nav#menu ul{
@@ -81,6 +84,7 @@ section#ficha{
 section#ficha img.foto{
   position: relative;
   animation: foto 2s ease-in-out  alternate-reverse infinite;
+  box-shadow: 5px 10px 10px 10px  rgba(0, 0, 0, 0.541);
  
   width:200px ;
   aspect-ratio: 1/ 1;
@@ -241,6 +245,56 @@ border-radius: 8px;
   font-size: 1.1em;
 }
 
+/*inicio de sessão de detalhes(Projeto)*/
+
+#projeto-container{
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 20px;
+}
+
+#projeto-container .projeto{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background-color: var(--fundo-principal);
+  padding: 10px;
+  border-radius: 10px;
+  border-left: 5px solid var(--destaque-inverso);
+  transition: border-color .5s, border-left-width .5s ;
+}
+
+#projeto-container .projeto:hover{
+  border-color: var(--destaque);
+  border-left-width: 15px;
+  cursor: pointer;
+}
+
+#projeto-container .foto{
+  width: 100%;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+footer{
+  background-color: var(--destaque);
+  color: var(--texto-inverso);
+  text-align: center;
+  padding: 15px;
+}
+
+footer a{
+  color: var(--texto-inverso);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+footer a:hover{
+  color: var(--destaque-inverso);
+}
+
+
 
 
 
@@ -251,4 +305,22 @@ border-radius: 8px;
   #skill-container{
     grid-template-columns: 1fr 1fr;
   }
+  #projeto-container .projeto{
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+
+   #projeto-container .projeto-info{
+    max-width: 80%;
+   
+   }
+   #projeto-container .foto{
+    aspect-ratio: 1/1;
+    max-width: 20%;
+    max-height: 200px;
+   }
+
+    
+
+
 }
